@@ -43,13 +43,12 @@ template<typename T>
 struct _STREPR_<T, true>{
   _STREPR_(std::ostream& strm, const T& arg) {
     strm << "[";
-    if(!arg.empty()) {
-      for(size_t i(0); i<arg.size()-1; i++) {
-	_STREPR_<decltype(arg[i])>(strm, arg[i]);
-	strm << ", ";
-      }
-      _STREPR_<decltype(arg.back())>(strm, arg.back());
+    for(auto it=std::begin(arg); it!=std::end(arg)-1; ++it) {
+      _STREPR_<decltype(*it)>(strm, *it);
+      strm << ", ";
     }
+    if(std::begin(arg) !=std::end(arg))
+      _STREPR_<decltype(*std::end(arg))>(strm, *(std::end(arg)-1));
     strm << "]";
   }
 };
