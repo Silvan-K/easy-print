@@ -42,14 +42,14 @@ struct _STREPR_<T, false>{
 template<typename T>
 struct _STREPR_<T, true>{
   _STREPR_(std::ostream& strm, const T& arg) {
-    strm << "[";
+    _STREPR_<std::string, false>(strm, "[");
     for(auto it=std::begin(arg); it!=std::end(arg)-1; ++it) {
       _STREPR_<decltype(*it)>(strm, *it);
-      strm << ", ";
+      _STREPR_<std::string, false>(strm, ", ");
     }
     if(std::begin(arg) !=std::end(arg))
       _STREPR_<decltype(*std::end(arg))>(strm, *(std::end(arg)-1));
-    strm << "]";
+    _STREPR_<std::string, false>(strm, "]");
   }
 };
 
