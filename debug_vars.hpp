@@ -32,7 +32,7 @@ struct _STREPR_;
 
 // Partial specialization for iterable=false
 template<typename T>
-struct _STREPR_<T, false>{
+struct _STREPR_<T, false> {
   _STREPR_(std::ostream& strm, const T& arg) {
     strm << arg;
   }
@@ -40,7 +40,7 @@ struct _STREPR_<T, false>{
 
 // Partial specialization for iterable=true
 template<typename T>
-struct _STREPR_<T, true>{
+struct _STREPR_<T, true> {
   _STREPR_(std::ostream& strm, const T& arg) {
     _STREPR_<std::string, false>(strm, "[");
     if(std::begin(arg) !=std::end(arg)){
