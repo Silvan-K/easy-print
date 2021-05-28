@@ -1,5 +1,6 @@
 #include "debug_vars.hpp"
 #include <vector>
+#include <map>
 
 int main(int argc, char** argv) {
 
@@ -11,6 +12,6 @@ int main(int argc, char** argv) {
   DEBUG_VARS("Some vector", std::vector<int>{1,2,3},
 	     "followed by an int", 12,
 	     "and another vector", std::vector<double>(3,12.0),
-	     "and a nested vector", nested_vec);
-  
+	     "and a nested vector", nested_vec,
+	     "and an empty vector", std::vector<double>());
 }
