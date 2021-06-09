@@ -1,6 +1,6 @@
 #include "debug_vars.hpp"
 #include <vector>
-#include <map>
+#include <array>
 
 int main(int argc, char** argv) {
 
@@ -13,5 +13,7 @@ int main(int argc, char** argv) {
 	     "followed by an int", 12,
 	     "and another vector", std::vector<double>(3,12.0),
 	     "and a nested vector", nested_vec,
-	     "and an empty vector", std::vector<double>());
+	     "and an empty vector", std::vector<double>(),
+	     "an an array", std::array<double, 3>());
+
 }
