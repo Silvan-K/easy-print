@@ -7,14 +7,15 @@ Provides a simple function that allows the user to conveniently print variables 
 
 ## Build, test, and install
 
-To install this project under the `$PREFIX` (`$HOME/.local/`, for example):
+To install this project under the `$PREFIX` (which is set to `$HOME/.local/` in this example):
 
 ```
 # Clone repo
 git@github.com:Silvan-K/easy-print.git && cd easy-print
 
 # Configure build
-mkdir build && cd build && cmake ../
+export $PREFIX=$HOME/.local
+mkdir build && cd build && cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX
 
 # Build, install, test
 cmake --build .
