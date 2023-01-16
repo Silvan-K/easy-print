@@ -1,6 +1,9 @@
 # easyPrint: header-only printing library
 
-Provides a simple function that allows the user to conveniently print variables and STL containers without explicitly looping over them. Designed to behave similarly to python's print function. 
+Provides a simple function that allows the user to conveniently print variables and STL containers without explicitly looping over them. Designed to behave similarly to python's print function.
+
+
+![CI status](https://github.com/Silvan-K/easy-print/actions/workflows/ci.yaml/badge.svg)
 
 ## Build, test, and install
 
