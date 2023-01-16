@@ -20,16 +20,17 @@ jobs:
           sudo apt-get install cmake
       - name: Configure build
         run: |
-          pwd
           mkdir build && cd build
           cmake ../ -DCMAKE_INSTALL_PREFIX=$HOME/.local
       - name: Build and install
         run: |
+          cd build
           cmake --build .
           cmake --install
           ctest --test-dir tests
       - name: Run tests
         run: |
+          cd build
           ctest --test-dir tests
           
           
