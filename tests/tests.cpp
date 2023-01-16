@@ -1,4 +1,4 @@
-#include "debug_vars.hpp"
+#include "easyPrint.hpp"
 #include <vector>
 #include <array>
 
