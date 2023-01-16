@@ -15,4 +15,7 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v3
       - name: Set up env
-        run: apt-get install cmake ctest
+        run: |
+          sudo apt-get update
+          sudo apt-get install cmake
+          
