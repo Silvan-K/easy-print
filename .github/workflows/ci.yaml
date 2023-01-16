@@ -27,7 +27,6 @@ jobs:
           cd build
           cmake --build .
           cmake --install .
-          ctest --test-dir tests
       - name: Run tests
         run: |
           cd build
