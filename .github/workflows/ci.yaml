@@ -1,0 +1,19 @@
+name: ci
+
+run-name: ${{ github.actor }} triggered CI
+
+on: [push]
+
+permissions:
+  contents: read
+  
+jobs:
+  test-all:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout out repo
+        uses: actions/checkout@v3
+      - name: Set up env
+        run: apt-get install cmake ctest
+      - name: 
