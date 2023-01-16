@@ -18,4 +18,18 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install cmake
+      - name: Configure build
+        run: |
+          pwd
+          mkdir build && cd build
+          cmake ../ -DCMAKE_INSTALL_PREFIX=$HOME/.local
+      - name: Build and install
+        run: |
+          cmake --build .
+          cmake --install
+          ctest --test-dir tests
+      - name: Run tests
+        run: |
+          ctest --test-dir tests
+          
           
