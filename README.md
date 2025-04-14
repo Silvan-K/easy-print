@@ -26,7 +26,7 @@ The above commands install the header [easyPrint.hpp](https://github.com/Silvan-
 
 ## Using the library
 
-To use this library in a hypothetical cmake target `MyTarget`, please add the following lines to your cmake file:
+To use this library as a dependency in a hypothetical cmake target `MyTarget`, please add the following lines to your cmake file:
 
 ```
 find_package(easyPrint CONFIG REQUIRED)
